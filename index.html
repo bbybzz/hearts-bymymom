@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tribute to Jackée 🎶</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #f8cdda, #fbc2eb);
+      color: #2d2d2d;
+      text-align: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+      animation: fadeIn 2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header {
+      padding: 60px 20px 20px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.3em;
+      font-family: 'Great Vibes', cursive;
+      color: #e91e63;
+    }
+
+    .typing {
+      font-size: 1.4em;
+      margin-top: 10px;
+      height: 40px;
+    }
+
+    .glow {
+      margin-top: 30px;
+      font-size: 1.2em;
+      background-color: #e91e63;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      display: inline-block;
+      animation: glowPulse 1.5s infinite alternate;
+    }
+
+    @keyframes glowPulse {
+      from { box-shadow: 0 0 10px #e91e63; }
+      to { box-shadow: 0 0 20px #e91e63, 0 0 30px #f06292; }
+    }
+
+    .video-card {
+      background: white;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 15px;
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 14px 28px;
+      font-size: 1.1em;
+      background-color: #fff;
+      border: 2px solid #e91e63;
+      border-radius: 10px;
+      color: #e91e63;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #e91e63;
+      color: white;
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      iframe {
+        height: 250px;
+      }
+
+      h1 {
+        font-size: 2.2em;
+      }
+
+      .typing {
+        font-size: 1.1em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Jackée 🌹</h1>
+    <div class="typing" id="typing-text"></div>
+    <div class="glow">🎵 Now Playing: “Your Love” by Jackée 🎵</div>
+  </header>
+
+  <div class="video-card">
+    <p style="font-size: 1.2em; margin-bottom: 20px;">
+      My mom is more than just amazing — she’s an artist, a singer, and my biggest inspiration.
+    </p>
+    <iframe 
+      src="https://www.youtube.com/embed/f74Oz-4lzRs" 
+      title="Jackée's Song" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+    <div>
+      <a href="https://vercel.com" target="_blank" class="btn">See What Else I Built</a>
+    </div>
+  </div>
+
+  <footer>
+    Coded with love by me 💻❤️ — Inspired by Jackée 🎤
+  </footer>
+
+  <script>
+    // Typing effect
+    const text = "She made this song... and I made this site to honor her.";
+    const typingEl = document.getElementById('typing-text');
+    let i = 0;
+
+    function type() {
+      if (i < text.length) {
+        typingEl.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, 50);
+      }
+    }
+
+    window.onload = type;
+  </script>
+
+</body>
+</html>
